@@ -55,6 +55,6 @@ def index():
     except Exception as ex:
         print(ex)
 
-    return 'success'
+    return 'result'
 
  
