@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 import os
@@ -47,14 +47,13 @@ def index():
     try:
         db = Database()
 
-        result = db.query("SELECT id FROM public.user")
+        result = db.query("SELECT \"firstName\" FROM public.user")
 
-        for row in result:
-            print("id:", row['id'])
+        records = json.dumps([dict(r) for r in result])
+
+        return render_template('index.html', result=json.loads(records))
 
     except Exception as ex:
         print(ex)
-
-    return 'result'
-
- 
+        
+    return 'result' 
