@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from flask import Flask, jsonify, json, request, abort, render_template
-=======
-from flask import Flask, render_template, jsonify, json
->>>>>>> d230cd9be154fd1dc54d6e5e529ca7f2c0c66f8c
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 import os
@@ -59,10 +55,4 @@ def index():
 
     except Exception as ex:
         print(ex)
-        
-<<<<<<< HEAD
-    return 'result' 
- 
-=======
-    return 'result' 
->>>>>>> d230cd9be154fd1dc54d6e5e529ca7f2c0c66f8c
+        return 'result' 
