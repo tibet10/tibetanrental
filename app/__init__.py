@@ -47,7 +47,7 @@ def index():
     try:
         db = Database()
 
-        result = db.query("SELECT \"firstName\" FROM public.user")
+        result = db.query("SELECT \"createDate\" FROM public.user")
 
         records = json.dumps([dict(r) for r in result])
 
@@ -55,4 +55,5 @@ def index():
 
     except Exception as ex:
         print(ex)
-        return 'result' 
+        
+    return 'result' 
