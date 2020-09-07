@@ -2,7 +2,7 @@
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, Numeric, String, Table, Text, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-from .database import Base
+from ..database import Base
 
 metadata = Base.metadata
 
